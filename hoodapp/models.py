@@ -46,7 +46,7 @@ class Business(models.Model):
     business_name = models.CharField(max_length=200)
     business_email = models.EmailField()
     business_owner = models.ForeignKey(User,on_delete=models.CASCADE)
-    business_hood_id = models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
+    # business_hood_id = models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
 
     class Meta:
         ordering = ['-id']
