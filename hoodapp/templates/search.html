@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+
+    <div class="row heading" style="margin-left:20px;">
+        {% if post %}
+        <h2>Found {{ post|length }} Business of searched term {{message}}</h2>
+        {% else %}
+        <h2> Found no Business for the search term {{message}}</h2>
+        {% endif %}
+
+    </div>
+    <div class="row">
+        {% for single_post in post %}
+
+        <div class="col-md-4 main-page d-flex" style=" margin-top: 10px;">
+            <div class="card card-cascade wider flex-fill">
+                <div class="card-body">
+
+                    <!--Title-->
+                    <h4 class="card-title">{{single_post.business_name}}</h4>
+                    <!--Text-->
+                    <p><cite>Email:{{single_post.business_email}}</cite></p>
+                    <p><cite>Owner: {{single_post.business_owner}}</cite></p>
+                    <div class="card-footer text-muted">
+                        Location: {{single_post.business_hood_id}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="row">
+            <h1 class="text-center"> No Images Yet</h1>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

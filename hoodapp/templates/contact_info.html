@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row" style="margin-top:10px;">
+        {% for single_contact in contacts %}
+        <div class="col-md-6">
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Health Department</div>
+                <div class="card-body text-primary">
+                    <h5 class="card-title">{{single_contact.hood}}</h5>
+                    <p class="card-text">Hot-Line: {{single_contact.health_department}}</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="card border-danger mb-3" style="max-width: 20rem;">
+                <div class="card-header">Police Department</div>
+                <div class="card-body text-danger">
+                    <h5 class="card-title">{{single_contact.hood}}</h5>
+                    <p class="card-text">Hot-Line: {{single_contact.police_department}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

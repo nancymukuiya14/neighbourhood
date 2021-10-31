@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" style="margin-top:30px;">
+    <div class="row profile">
+        <div class="col-md-2">
+            {% if profile.profile_picture %}
+            <img src="{{profile.profile_picture.url}}" alt="{{user}}" class="img-responsive"
+                style="height:300px;width:380px;">
+            {% else %}
+            <img src="/media/prof_pics/Avatar.png" alt="No Profile Pic">
+            {% endif %}
+        </div>
+
+        <div class="col-md-3" style="margin-left:200px;margin-top:30px;">
+            <a href="{% url 'edit_profile' %}" class="btn btn-light">Edit Profile</a>
+            <h3>{{user}}</h3>
+        </div>
+
+        <div class="col-md-3">
+            <p style="margin-left:20px;margin-top: 30px;"><strong>Hood Name: </strong>{{profile.hood_id}}</p>
+            <p style="margin-left:20px;"><strong>Location: </strong>{{profile.user_location}}</p>
+        </div>
+
+    </div>
+    <div class="row">
+        <h3 style="margin-left:550px;" class="heading">Businesses</h3>
+    </div>
+    <div class="row" style="margin-top:30px;">
+
+        <!-- Card deck -->
+        <div class="card-deck">
+            {% if business %}
+            {% for single_post in business %}
+            <!-- Card -->
+            <div class="">
+                <div class="card border-primary mb-3" style="max-width: 40rem;">
+                    <div class="card-header">Name: {{single_post.business_name}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Email: {{single_post.business_email}}</h5>
+
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+            {% else %}
+            <h4 style="margin-left:450px;color: red" class="heading">No Businesses Posted</h4>
+            {% endif %}
+        </div>
+        <!-- Card deck -->
+
+    </div>
+    <div class="row">
+        <h3 style="margin-left:550px;" class="heading">Posts</h3>
+    </div>
+    <div class="row" style="margin-top:30px;">
+        {% if posts %}
+        <!-- Card deck -->
+        <div class="card-deck">
+            {% for post in posts %}
+            <div class="card mb-4">
+
+                <!--Card image-->
+                <div class="view overlay">
+                    <img class="card-img-top" src="{{post.post_picture.url}}" alt="Card image cap">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!--Card content-->
+                <div class="card-body">
+
+                    <!--Title-->
+                    <h4 class="card-title">{{post.post_name}}</h4>
+                    <!--Text-->
+                    <p class="card-text">{{post.post_description}}</p>
+                    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                    <p>Posted by: {{post.post_owner}}</p>
+
+                </div>
+
+            </div>
+            <!-- Card -->
+            {% endfor %}
+        </div>
+        <!-- Card deck -->
+        {% else %}
+        <h4 style="margin-left:450px;color: red" class="heading">No Posts Yet</h4>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

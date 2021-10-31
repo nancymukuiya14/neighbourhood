@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid ground ">
+    <div>
+        <h4 class="text-center heading"> Hood Posts</h4>
+    </div>
+    <div class="row">
+        {% for post in posts %}
+
+        <div class="col-md-4 main-page d-flex" style=" margin-top: 5px;">
+            <!-- Card -->
+            <!-- Card deck -->
+            <div class="card-deck">
+
+                <!-- Card -->
+                <div class="card mb-4">
+                    <div class="card-header"><strong>Hood: </strong>{{post.hood_post}}</div>
+                    <!--Card image-->
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{{post.post_picture.url}}" alt="Card image cap">
+                        <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <!--Title-->
+                        <h4 class="card-title heading">{{post.post_name}}</h4>
+                        <!--Text-->
+                        <p><i class="fas fa-quote-left"> </i>{{ post.post_description }}<i class="fas fa-quote-right">
+                            </i></p>
+                    </div>
+                    <!-- Card footer -->
+                    <div class="rounded-bottom mdb-color lighten-3 text-center pt-3">
+                        <ul class="list-unstyled list-inline font-small">
+                            <li class="list-inline-item pr-2 white-text"> Posted on: <i
+                                    class="far fa-clock pr-1"></i>{{post.date_posted}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
+            <!-- Card -->
+        </div>
+        {% empty %}
+        <div class="row" style="margin-top:50px;">
+            <h2 style="margin-left:400px;" class="heading">Create a Profile to view Businesses and Posts</h2>
+
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

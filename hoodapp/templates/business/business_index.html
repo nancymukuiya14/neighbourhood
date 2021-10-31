@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid ground">
+    <div>
+        <h4 class="text-center heading">NeighbourHood Businesses</4>
+    </div>
+    <div class="row">
+        {% for business in all_businesses%}
+
+        <div class="col-md-4 main-page d-flex" style=" margin-top: 5px;">
+            <div class="card card-cascade wider flex-fill ">
+
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <!-- <img class="card-img-top" src="{{business.image.url}}" alt="{{business.title}}"> -->
+                </div>
+                <div class="card-header"><strong>Hood: </strong>{{business.business_hood_id}}</div>
+                <!--Card content-->
+                <div class="card-body">
+                    <!--Title-->
+                    <h4 class="card-title heading">{{business.business_name}}</h4>
+                    <!--Text-->
+                    <p class="card-text">{{business.business_email}}</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        {% empty %}
+        <div class="row" style="margin-top:50px;">
+            <h2 class="heading" style="margin-left:500px;"> No Businesses Posted Yet!!!!!!!</h2>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- Card deck -->
+    {% if profile%}
+    {% else %}
+    <div class="row" style="margin-top:50px;">
+        <div class="row">
+            <h3 style="margin-left:500px;" class="heading"> To view Business Create a Profile</h3>
+            <a href="{% url 'new_profile'%}" class="btn btn-info btn-lg" style="margin-left:550px;">Create a profile</a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock%}
