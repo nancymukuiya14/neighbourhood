@@ -1,4 +1,6 @@
 ## The Neighbourhood Watch
 ## Developed by:Nancy Kigotho
 ## Description
-* This is a clone of Instagram where people share their images and videos for other users to view. Users can sign up, login, view and post photos, search and follow other users.
+This a django web application that allows registered users to know about everything happening in your current neighborhood.
+
+## User Story
