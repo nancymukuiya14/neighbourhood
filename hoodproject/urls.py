@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from hoodapp import views
 from django.conf.urls import url, include
 from django_registration.backends.one_step.views import RegistrationView
 
@@ -28,5 +29,5 @@ urlpatterns = [
     path("accounts/", include("django_registration.backends.one_step.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     url(r'',include('hoodapp.urls')),
-    # url(r'^logout/$', views.logout, {"next_page": '/'}),
+    # url(r'^logout/$', views.logout, {'/'}),
 ]

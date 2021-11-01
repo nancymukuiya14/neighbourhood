@@ -46,7 +46,7 @@ class Business(models.Model):
     business_name = models.CharField(max_length=200)
     business_email = models.EmailField()
     business_owner = models.ForeignKey(User,on_delete=models.CASCADE)
-    # business_hood_id = models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
+    business_hood_id = models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
 
     class Meta:
         ordering = ['-id']
@@ -76,7 +76,7 @@ class Post(models.Model):
     post_description = models.TextField()
     date_posted = models.DateField(auto_now=True)
     post_owner = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
-    # hood_post = models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
+    hood_post = models.ForeignKey(Neighborhood,on_delete=models.CASCADE,null=True)
     def __str__(self):
         return self.post_name
 

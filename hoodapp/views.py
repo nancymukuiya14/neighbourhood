@@ -123,3 +123,7 @@ def new_post(request):
     else:
         form = PostForm()
     return render(request,"create_post.html",{"form":form})
+
+# @login_required(login_url='/accounts/login/')
+# def logout(request):
+#     return redirect('/accounts/logout/')
