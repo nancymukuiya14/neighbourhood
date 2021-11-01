@@ -107,6 +107,7 @@ def search_post(request):
 @login_required(login_url='/accounts/login/')
 def contact(request):
     contacts = ContactInfo.objects.all()
+    print(contacts)
     return render(request,'contact_info.html',{"contacts":contacts})
 
 @login_required(login_url='/accounts/login/')
