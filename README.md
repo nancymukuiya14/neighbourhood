@@ -41,6 +41,11 @@ The different technologies that were used to develop this program include:
 5. Postgresql
 7. Django Framework
 
+## Images
+![alt text](screenshots/hood1.png)
+![alt text](screenshots/hood2.png)
+![alt text](screenshots/hood3.png)
+
 ## Contact Information.
 Incase you have any questions or you would want to work with me contact me via:
 * Twitter:@mukuiyakigotho
