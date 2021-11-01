@@ -15,21 +15,21 @@ This a django web application that allows registered users to know about everyth
 ## Project Setup instructions
 Use the following commands to use this project.
 
-git clone 
-install python 3.8
-Install Postgresql
-cd Hood
-Navigate to the virtual environment using source virtual/bin/activate
+* git clone https://github.com/nancymukuiya14/neighbourhood.git
+* install python 3.8
+* Install Postgresql
+* cd Hood
+* Navigate to the virtual environment using source virtual/bin/activate
 atom . //For those using atom text editor.
 code . //For those using Visual Studio editor.
-Install dependancies
-Install dependancies that will create an environment for the app to run pip install -r requirements.txt
+* Install dependancies
+* Install dependancies that will create an environment for the app to run pip install -r requirements.txt
 
 Create the Database
-psql
-CREATE DATABASE <preferred name>;
-Run python3.6 manage.py runserver
-Access the application on this localhost address http://127.0.0.1:8000
+* psql
+* CREATE DATABASE <preferred name>;
+* Run python3.6 manage.py runserver
+* Access the application on this localhost address http://127.0.0.1:8000
 
 ## Technologies used
 The different technologies that were used to develop this program include:
